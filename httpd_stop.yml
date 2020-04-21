@@ -17,5 +17,4 @@
       state: stopped
   - name: Update Apache
     yum:
-      name: httpd
-      state: update
+      name: update httpd
