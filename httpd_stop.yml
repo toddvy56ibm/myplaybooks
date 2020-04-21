@@ -14,4 +14,8 @@
   - name: stop Apache server
     service:
       name: httpd
-      state: stop
+      state: stopped
+  - name: Update Apache
+    yum:
+      name: httpd
+      state: update
