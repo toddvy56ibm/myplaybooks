@@ -1,5 +1,5 @@
 ---
-  - name: start Apache server
+  - name: STOP Apache server
     service:
       name: httpd
       state: stop
