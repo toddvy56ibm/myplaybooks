@@ -3,7 +3,7 @@
   hosts: 10.1.10.84
   become: yes
   tasks:
-  - name: latest Apache version installed
+  - name: Older Apache version installed
     yum:
       name: httpd-2.2.29-1.4.amzn1
       state: present
@@ -15,6 +15,11 @@
     service:
       name: httpd
       state: stopped
-  - name: Update Apache
+  - name: Update Apache to latest
     yum:
-      name: update , httpd
+      name: httpd
+      state: latest
+  - name: stop Apache server
+    service:
+      name: httpd
+      state: start
