@@ -11,7 +11,7 @@
     template:
       src: index.html
       dest: /var/www/html
-  - name: start Apache server
+  - name: stop Apache server
     service:
       name: httpd
       state: stop
