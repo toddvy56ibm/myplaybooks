@@ -1,16 +1,17 @@
 ---
-name: sarat git test
-hosts: 10.1.10.84
-vars:
-   haproxy_socket: ''
-   haproxy_chroot: ''
-   haproxy_user: root
-   haproxy_group: root
+- name: sarat git test
+  hosts: 10.1.10.84
+  vars:
+     haproxy_socket: ''
+     haproxy_chroot: ''
+     haproxy_user: root
+     haproxy_group: root
 
-   haproxy_backend_servers:
-     - name: app1
-       address: 127.0.0.1:8080
+#  haproxy_backend_servers:
+#    - name: app1
+#      address: 127.0.0.1:8080
 
-roles:
-  - geerlingguy.haproxy
+  roles:
+    - geerlingguy.haproxy
+
   
