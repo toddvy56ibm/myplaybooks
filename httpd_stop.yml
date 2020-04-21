@@ -5,8 +5,8 @@
   tasks:
   - name: latest Apache version installed
     yum:
-      name: httpd
-      state: latest
+      name: httpd-2.2.29-1.4.amzn1
+      state: present
   - name: copy index.html
     template:
       src: index.html
