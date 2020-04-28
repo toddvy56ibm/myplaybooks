@@ -1,0 +1,10 @@
+---
+ - name: install insights
+   hosts: all
+   tasks:
+   - name: insights client install
+     yum:
+       name: insights-client
+       state: latest
+   - name: register client
+     command: insights-client --register
