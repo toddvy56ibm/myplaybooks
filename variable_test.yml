@@ -5,9 +5,13 @@
    vars:
      target_service: httpd
      target_state: latest
+     service_state: started
    tasks:
      - name: Ensure target service is installed
        yum:
          name: "{{ target_service }}"
          state: "{{ target_state }}"
-         
+     - name: Ensure Service is started
+       service:
+         name: "{{ target_service }}"
+         state: "{{ service_state }}"
