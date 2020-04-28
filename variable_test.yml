@@ -1,6 +1,5 @@
 ---
  - name: Variable Test
-   hosts: all
    become: yes
    vars:
      target_service: httpd
