@@ -4,10 +4,10 @@
    become: yes
    vars:
      target_service: httpd
-     target_state: started
+     target_state: latest
    tasks:
-     - name: Ensure target service is at target state
-       service:
+     - name: Ensure target service is installed
+       yum:
          name: "{{ target_service }}"
          state: "{{ target_state }}"
          
