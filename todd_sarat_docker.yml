@@ -1,7 +1,7 @@
 - hosts: all
   pre_tasks:
-    - command: ansible-galaxy install geerlingguy.docker
-    - command: ansible-galaxy install geerlingguy.pip
+    - shell: ansible-galaxy install geerlingguy.docker
+    - shell: ansible-galaxy install geerlingguy.pip
   vars:
     pip_install_packages:
       - name: docker
