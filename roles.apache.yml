@@ -1,0 +1,7 @@
+---
+- name: include apache role
+  hosts: all 
+
+  roles:
+    - role: sample-apache 
+    
