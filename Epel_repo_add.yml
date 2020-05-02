@@ -1,1 +1,9 @@
-aa
+---
+- name: Install EPEL Repository
+  hosts: all
+  become: yes
+  tasks:
+  - name: EPEL Repo Add
+    yum:
+      name: epel-release
+      state: latest
