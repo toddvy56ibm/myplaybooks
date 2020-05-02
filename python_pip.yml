@@ -1,0 +1,9 @@
+---
+- name: Install PIP
+  hosts: all
+  become: yes
+  tasks:
+  - name: latest PIP version installed
+    yum:
+      name: python-pip
+      state: latest
