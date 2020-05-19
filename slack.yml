@@ -1,0 +1,6 @@
+---
+- name: Send notification message via Slack
+  slack:
+    token: thetoken/generatedby/slack
+    msg: '{{ inventory_hostname }} completed'
+  delegate_to: localhost
