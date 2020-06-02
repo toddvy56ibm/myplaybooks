@@ -1,10 +1,9 @@
 ---
- - name: yum update
+ - name: yum update all packages
    hosts: all
    tasks:
-   - name: yum install updates
+   - name: upgrade all packages
      yum:
-       name: update
+       name: *
        state: latest
- #  - name: register client
- #    command: insights-client --register
+       
