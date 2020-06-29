@@ -1,0 +1,8 @@
+---
+- name: test chocolatey with ansible
+  hosts: all
+  tasks:
+    - name: unInstall Firefox
+      win_chocolatey:
+        name: firefox
+        state: absent
