@@ -1,9 +1,9 @@
 ---
 - name: Create a new group
   hosts: all
+  connection: local
   tasks:
-  - name: Create Group Maybe
-    ansible.windows.win_group:
+  - ansible.windows.win_group:
       name: deploy
       description: Deploy Group
       state: present
