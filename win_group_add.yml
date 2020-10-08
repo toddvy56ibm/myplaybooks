@@ -2,7 +2,7 @@
 - name: Create a new group
   hosts: all
   ansible.windows.win_group:
-    name: deploy
+  - name: deploy
     description: Deploy Group
     state: present
     
