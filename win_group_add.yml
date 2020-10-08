@@ -4,8 +4,9 @@
   collections:
     - ansible.windows
   tasks:
+  - name: Create Group Maybe
     ansible.windows.win_group:
-    - name: deploy
+      name: deploy
       description: Deploy Group
       state: present
     
