@@ -1,7 +1,8 @@
 ---
 - name: check if a service is installed
   hosts: all
-  task:
-    win_service:
-      name: Dhcp
-    register: service_info
+  tasks:
+    - name: This is a server info pull
+      win_service:
+        name: dhcp
+      register: service_info
