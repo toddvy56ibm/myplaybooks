@@ -1,8 +1,6 @@
 ---
 - name: Create a new group
   hosts: all
-  collections:
-    - ansible.windows
   tasks:
   - name: Create Group Maybe
     ansible.windows.win_group:
