@@ -6,3 +6,6 @@
       win_service:
         name: dhcp
       register: service_info
+    - debug:
+        msg: "{{ service_info }}"
+      
