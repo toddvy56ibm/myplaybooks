@@ -2,6 +2,8 @@
 - name: Create a new group
   hosts: all
   connection: local
+  collections:
+    - ansible.windows
   tasks:
   - ansible.windows.win_group:
       name: deploy
