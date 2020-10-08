@@ -1,5 +1,7 @@
 ---
 - name: Create a new group
+collections:
+- name: ansible.windows
   hosts: all
   ansible.windows.win_group:
     name: deploy
