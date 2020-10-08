@@ -2,6 +2,6 @@
 - name: check if a service is installed
   hosts: all
   task:
-  win_service:
-    name: Dhcp
-  register: service_info
+    win_service:
+      name: Dhcp
+    register: service_info
