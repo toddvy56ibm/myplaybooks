@@ -1,3 +1,4 @@
+---
 - name: Create a new group
   ansible.windows.win_group:
     name: deploy
