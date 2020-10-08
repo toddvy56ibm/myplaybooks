@@ -1,9 +1,10 @@
 ---
 - name: Create a new group
-collections:
-- name: ansible.windows
   hosts: all
+  collections:
+     - ansible.windows
   ansible.windows.win_group:
     name: deploy
     description: Deploy Group
-    state: present  
+    state: present
+    
