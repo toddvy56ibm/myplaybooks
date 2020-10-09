@@ -10,7 +10,7 @@
       firstname: Todd
       surname: Smith
       company: ToddCo
-      password: nopassword
+      password: "{{ user_password }}"
       state: present
       groups:
        - "{{ group_name }}"
