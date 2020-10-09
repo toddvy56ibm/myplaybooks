@@ -9,7 +9,3 @@
       name: "{{ group_name }}"
       scope: domainlocal
       category: security
-      attributes:
-       mail: helpdesk@ansible.com
-       wWWHomePage: www.ansible.com
-       ignore_protection: yes
