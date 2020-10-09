@@ -1,0 +1,9 @@
+- name: Create group with delete protection enabled and custom attributes
+  community.windows.win_domain_group:
+    name: Ansible Users
+    scope: domainlocal
+    category: security
+    attributes:
+      mail: helpdesk@ansible.com
+      wWWHomePage: www.ansible.com
+    ignore_protection: yes
