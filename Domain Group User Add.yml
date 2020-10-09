@@ -4,7 +4,7 @@
   collections:
     - ansible.windows
   tasks:
-  - name: Ensure user bob is present with address information
+  - name: "Ensure user {{ user_name }} to group {{ group_name }}"  
     win_domain_user:
       name: "{{ user_name }}"
       firstname: Todd
