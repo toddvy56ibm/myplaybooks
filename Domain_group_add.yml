@@ -5,11 +5,11 @@
     - ansible.windows
   tasks:
   - name: Create group with delete protection enabled and custom attributes
-  win_domain_group:
-    name: Ansible Users
-    scope: domainlocal
-    category: security
-    attributes:
+    win_domain_group:
+      name: Ansible Users
+      scope: domainlocal
+      category: security
+      attributes:
       mail: helpdesk@ansible.com
       wWWHomePage: www.ansible.com
-    ignore_protection: yes
+      ignore_protection: yes
