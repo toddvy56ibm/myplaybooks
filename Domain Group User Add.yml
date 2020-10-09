@@ -6,14 +6,14 @@
   tasks:
   - name: Ensure user bob is present with address information
     win_domain_user:
-      name: bob
+      name: "{{ user_name }}"
       firstname: Todd
       surname: Smith
       company: ToddCo
       password: nopassword
       state: present
       groups:
-       - Ansible Users
+       - "{{ group_name }}"
       street: 123 4th St.
       city: Sometown
       state_province: IN
