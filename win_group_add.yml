@@ -1,11 +1,11 @@
 ---
 - name: Create a new group
   hosts: all
-  #collections:
-  #  - ansible.windows
+  collections:
+    - ansible.windows
   tasks:
   - name: Win Group Test
-    ansible.windows.win_group:
+    win_group:
       name: deploy2
       description: Deploy Group
       state: present
