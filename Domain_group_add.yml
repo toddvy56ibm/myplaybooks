@@ -1,5 +1,11 @@
-- name: Create group with delete protection enabled and custom attributes
-  community.windows.win_domain_group:
+---
+- name: Create a new group
+  hosts: all
+  collections:
+    - ansible.windows
+  tasks:
+  - name: Create group with delete protection enabled and custom attributes
+  win_domain_group:
     name: Ansible Users
     scope: domainlocal
     category: security
