@@ -4,29 +4,20 @@
   collections:
     - ansible.windows
   tasks:
-  - name: Create group with delete protection enabled and custom attributes
-    win_domain_group:
-      name: Ansible Users
-      scope: domainlocal
-      category: security
+  - name: Ensure user bob is present with address information
+    win_domain_user:
+      name: bob
+      firstname: Todd
+      surname: Smith
+      company: ToddCo
+      password: nopassword
+      state: present
+      groups:
+       - Ansible Users
+      street: 123 4th St.
+      city: Sometown
+      state_province: IN
+      postal_code: 12345
+      country: US
       attributes:
-      mail: helpdesk@ansible.com
-      wWWHomePage: www.ansible.com
-      ignore_protection: yes
- - name: Ensure user bob is present with address information
-   win_domain_user:
-     name: bob
-     firstname: Todd
-     surname: Smith
-     company: ToddCo
-     password: nopassword
-     state: present
-     groups:
-      - Ansible Users
-    street: 123 4th St.
-    city: Sometown
-    state_province: IN
-    postal_code: 12345
-    country: US
-    attributes:
-    telephoneNumber: 555-123456
+      telephoneNumber: 555-123456
