@@ -5,7 +5,7 @@
   collections:
     - ansible.windows
   tasks:
-  - ansible.windows.win_group:
+  - win_group:
       name: deploy
       description: Deploy Group
       state: present
