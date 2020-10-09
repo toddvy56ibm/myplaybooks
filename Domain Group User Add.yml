@@ -1,6 +1,7 @@
 ---
 - name: Create a new group
   hosts: all
+  gather_facts: no
   collections:
     - ansible.windows
   tasks:
