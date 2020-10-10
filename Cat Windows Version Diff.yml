@@ -1,0 +1,17 @@
+---
+- name: Windows Feature
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Disable Private firewall
+      win_firewall:
+        state: disabled
+        profiles: Private
+
+    - name: Update
+      win_updates:
+      register: reboot
+
+    - name: Reboot
+      win_reboot:
+      when: reboot.reboot_required
