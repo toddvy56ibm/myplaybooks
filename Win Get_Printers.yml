@@ -1,6 +1,7 @@
 ---
 - name: Create a new group
   hosts: all
+  gather_facts: no
   tasks:
   - name: Windows - Listing local printers
     win_shell: 'wmic printer list brief'
