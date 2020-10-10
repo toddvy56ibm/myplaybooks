@@ -1,0 +1,5 @@
+---
+
+- name: Windows - Listing local printers
+  win_shell: 'wmic printer list brief'
+  register: local_printer_list
