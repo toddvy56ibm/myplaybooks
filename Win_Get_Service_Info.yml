@@ -7,5 +7,5 @@
         name: dhcp
       register: service_info
     - debug:
-        msg: "{{ service_info }}"
+        msg: "{{ service_info.stdout }}"
       
