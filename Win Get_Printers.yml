@@ -1,5 +1,5 @@
 ---
-- name: Create a new group
+- name: Get Windows Server Printer Info
   hosts: all
   gather_facts: no
   tasks:
