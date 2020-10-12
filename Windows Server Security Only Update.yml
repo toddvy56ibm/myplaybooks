@@ -3,6 +3,7 @@
   hosts: all
   collections:
     - ansible.windows
-- name: Install only security updates
-  win_updates:
-    category_names: SecurityUpdates     
+  tasks:  
+  - name: Install only security updates
+    win_updates:
+      category_names: SecurityUpdates     
