@@ -1,0 +1,9 @@
+---
+
+
+- name: Install only security updates
+  win_updates:
+    category_names: SecurityUpdates
+      
+      
+      
