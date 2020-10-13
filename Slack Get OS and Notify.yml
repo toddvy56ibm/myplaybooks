@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: Send notification message via Slack
+    slack:
+      token: /T013STESPGD/B014CQEAK1P/fAZ3iN0klaHBtOzopCEGiTF1
+      msg: '{{ inventory_hostname }} completed {{ ansible_os_family }} is your OS Vendor using {{ansible_all_ipv4_addresses}}  '
+#      msg: '{{ ansible_os_family }} is your OS Vendor'
+    delegate_to: localhost
