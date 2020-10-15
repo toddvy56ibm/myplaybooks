@@ -1,0 +1,8 @@
+---
+#snow_record variables
+sn_username: admin
+sn_password: "{{ sn_password }}"
+sn_instance: "{{ sn_instance }}"
+#data variables
+sn_severity: 2
+sn_priority: 2
