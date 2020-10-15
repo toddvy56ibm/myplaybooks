@@ -13,7 +13,7 @@
       username: "{{ sn_username }}"
       password: "{{ sn_password }}"
       instance: "{{ sn_instance }}"
-      number: CHG0030008
+      number: "{{ sn_incident }}"
       data:
         state: -2
     register: incident
@@ -24,7 +24,7 @@
       username: "{{ sn_username }}"
       password: "{{ sn_password }}"
       instance: "{{ sn_instance }}"
-      number: CHG0030008
+      number: "{{ sn_incident }}"
       data:
         state: -1
     register: incident
@@ -35,7 +35,7 @@
       username: "{{ sn_username }}"
       password: "{{ sn_password }}"
       instance: "{{ sn_instance }}"
-      number: CHG0030008
+      number: "{{ sn_incident }}"
       data:
         state: 0
     register: incident
@@ -46,7 +46,7 @@
       username: "{{ sn_username }}"
       password: "{{ sn_password }}"
       instance: "{{ sn_instance }}"
-      number: CHG0030008
+      number: "{{ sn_incident }}"
       data:
         close_code: successful
         close_notes: Closing the ticket
