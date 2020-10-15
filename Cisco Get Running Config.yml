@@ -1,8 +1,9 @@
 - name: "Demonstrate connecting to switches"
   hosts: all
-  gather_facts: yes
+  gather_facts: true
+  connection: network_cli
 
-  tasks:
+tasks:
     ###
     # Demonstrate variables
     #
