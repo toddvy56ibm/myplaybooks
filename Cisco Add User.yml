@@ -3,7 +3,7 @@
 - name: Add User
   hosts: all
     collections:
-    - cisco.ios
+      - cisco.ios
   gather_facts: false
   connection: network_cli
 
