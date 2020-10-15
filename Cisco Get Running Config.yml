@@ -3,7 +3,7 @@
   gather_facts: true
   connection: network_cli
 
-tasks:
+  tasks:
     ###
     # Demonstrate variables
     #
