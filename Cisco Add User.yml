@@ -3,7 +3,7 @@
 - name: Add User
   hosts: all
     collections:
-    - cisco.ios.ios_user
+    - cisco.ios
   gather_facts: false
   connection: network_cli
 
@@ -12,7 +12,7 @@
       ios_facts:
       
 - name: create a new user
-  cisco.ios.ios_user:
+  ios_user:
     name: "{{ new_user }}"
     configured_password: '{{ new_password }}'
     password_type: password
