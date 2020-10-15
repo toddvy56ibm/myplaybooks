@@ -7,17 +7,14 @@
   gather_facts: false
   connection: network_cli
 
-  tasks:
-    - name: gather router facts
-      ios_facts:
-      
+  tasks:   
     - name: create a new user
       ios_user:
-      name: "{{ new_user }}"
-      configured_password: '{{ new_password }}'
-      password_type: password
+        name: "{{ new_user }}"
+        configured_password: '{{ new_password }}'
+        password_type: password
 #    nopassword: true
 #    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      state: present
+        state: present
     
     
