@@ -28,7 +28,7 @@
             Serial: {{ hostvars[host].ansible_net_serialnum }}
             {% endfor %}
          
-         dest: /tmp/switch-facts
+       dest: /tmp/switch-facts
       run_once: yes
 
     ###
