@@ -1,0 +1,21 @@
+---
+
+- name: Add User
+  hosts: all
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: gather router facts
+      ios_facts:
+      
+- name: create a new user
+  cisco.ios.ios_user:
+    name: "{{ new_user }}"
+    configured_password: '{{ new_password }}'
+    password_type: password
+#    nopassword: true
+#    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    state: present
+    
+    
