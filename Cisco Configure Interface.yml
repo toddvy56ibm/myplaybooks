@@ -13,7 +13,7 @@
   - name: Merge provided configuration with device configuration
     ios_vlans:
       config:
-      - name: Vlan_Todd
+      - name: Vlan_10
         vlan_id: 10
         state: active
         shutdown: disabled
