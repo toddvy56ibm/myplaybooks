@@ -13,8 +13,8 @@
   - name: Add VLAN configuration to switch 
     ios_vlans:
       config:
-      - name: Vlan_3
-        vlan_id: 3
+      - name: Vlan_5
+        vlan_id: 5
         state: active
         shutdown: disabled
       state: merged
