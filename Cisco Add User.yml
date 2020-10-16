@@ -2,6 +2,9 @@
 
 - name: Add User
   hosts: all
+  ansible_become: yes
+  ansible_become_method: enable
+  auth_pass: ansible
   collections:
     - cisco.ios
   gather_facts: false
