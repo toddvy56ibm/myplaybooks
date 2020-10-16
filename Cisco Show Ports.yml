@@ -10,7 +10,7 @@
       block:
         - name: Run cli_command on Cisco IOS
           ios_command:
-            command:
+            commands:
               - show version
               - show interfaces
           register: result
