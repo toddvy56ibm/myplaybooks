@@ -1,6 +1,6 @@
 ---
 
-- name: Add User
+- name: Add VLAN 
   hosts: all
   become: yes
   become_method: enable
@@ -10,7 +10,7 @@
   connection: network_cli
   
   tasks:   
-  - name: Merge provided configuration with device configuration
+  - name: Add VLAN configuration to switch 
     ios_vlans:
       config:
       - name: Vlan_3
