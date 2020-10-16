@@ -1,0 +1,30 @@
+---
+
+- name: Add User
+  hosts: all
+  become: yes
+  become_method: enable
+  collections:
+    - cisco.ios
+  gather_facts: false
+  connection: network_cli
+  
+  tasks:   
+- name: Merge provided configuration with device configuration
+  cisco.ios.ios_vlans:
+    config:
+    - name: Vlan_Todd
+      vlan_id: 10
+      state: active
+      shutdown: disabled
+      remote_span: 10
+    - name: Vlan_20
+      vlan_id: 20
+      mtu: 610
+      state: active
+      shutdown: enabled
+    - name: Vlan_30
+      vlan_id: 30
+      state: suspend
+      shutdown: enabled
+    state: merged
