@@ -2,8 +2,8 @@
 
 - name: Add User
   hosts: all
-  ansible_become: yes
-  ansible_become_method: enable
+  become: yes
+  become_method: enable
   auth_pass: ansible
   collections:
     - cisco.ios
