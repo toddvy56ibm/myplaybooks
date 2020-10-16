@@ -13,7 +13,7 @@
             command:
               - show version
               - show interfaces
-      register: result
+          register: result
 
     - name: Display result to terminal window
       debug:
