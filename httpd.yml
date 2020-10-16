@@ -2,7 +2,7 @@
 - name: Apache server installed
   hosts: 10.1.10.84
   become: yes
-  ganther_facts: false
+  gather_facts: false
   tasks:
   - name: latest Apache version installed
     yum:
