@@ -7,7 +7,7 @@
   gather_facts: false
   connection: network_cli
 #  authorize: yes 
-  auth_pass: "{{ auth_pass }}"
+#  auth_pass: "{{ auth_pass }}"
 
   tasks:   
     - name: create a new user
