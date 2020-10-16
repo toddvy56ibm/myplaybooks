@@ -17,5 +17,4 @@
         vlan_id: 3
         state: active
         shutdown: disabled
-        remote_span: 10
-      state: merged
+    state: merged
