@@ -3,11 +3,13 @@
   hosts: all
   gather_facts: true
   connection: network_cli
+  collections:
+    - cisco.ios
   tasks:
     - name: Run cli_command on Cisco IOS and display results
       block:
     - name: Run cli_command on Cisco IOS
-      cisco.ios.ios_command:
+      ios_command:
         command:
         - show version
         - show interfaces
