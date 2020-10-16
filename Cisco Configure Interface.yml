@@ -13,7 +13,7 @@
   - name: Add VLAN configuration to switch 
     ios_vlans:
       config:
-      - name: Vlan_5
+      - name: DemoVLAN
         vlan_id: 5
         state: active
         shutdown: disabled
