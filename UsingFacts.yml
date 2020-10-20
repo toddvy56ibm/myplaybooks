@@ -17,5 +17,5 @@
       become: yes
       become_user: root 
       shell: uname -a
-      when: "{{ ansible_hostname == 'httpd'}}"
+      when: "{{ ansible_hostname == httpd }}"
       
