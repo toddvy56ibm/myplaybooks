@@ -16,6 +16,6 @@
     - name: Execute the command only HTTPD server
       become: yes
       become_user: root 
-      shell: "uname -a"
+      shell: uname -a
       when: "{{ ansible_hostname == 'httpd'}}"
       
