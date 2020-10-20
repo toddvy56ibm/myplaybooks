@@ -5,15 +5,15 @@
 
     # Print the Dictionary
     - debug:
-        msg: "{{ansible_mounts}}"
+        msg: "{{ ansible_mounts }}"
 
     # Parsing through Variable Dictionary
     - debug:
         msg: "Mount Point {{item.mount}} is at {{item.block_used/item.block_total*100}} percent "
-      loop: "{{ansible_mounts}}"
+      loop: "{{ ansible_mounts }}"
 
     # Execute Host based task using variable
-    - name: Execute the command only HTTPD server
+    - name: Execute the command only HTTPD servers
       become: yes
       become_user: root 
       shell: uname -a
