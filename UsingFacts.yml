@@ -1,0 +1,21 @@
+---
+- name: Ansible Variable Example Playbook
+  hosts: all
+  tasks:
+
+    # Print the Dictionary
+    - debug:
+        msg: "{{ansible_mounts}}"
+
+    # Parsing through Variable Dictionary
+    - debug:
+        msg: "Mount Point {{item.mount}} is at {{item.block_used/item.block_total*100}} percent "
+      loop: "{{ansible_mounts}}"
+
+    # Execute Host based task using variable
+    - name: Execute the command only HTTPD server
+      become: yes
+      become_user: root 
+      shell: "uname -a"
+      when: "{{ ansible_hostname == 'httpd'}}"
+      
