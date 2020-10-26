@@ -1,5 +1,6 @@
 ---
-- name: Play to create a user
+- name: Upgrade Debian Distro
+  become: yes
   hosts: all
   tasks: 
     - name: Run the equivalent of "apt-get update" as a separate step
