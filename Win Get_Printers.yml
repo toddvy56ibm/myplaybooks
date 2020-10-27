@@ -7,5 +7,5 @@
     win_shell: 'wmic printer list brief'
     register: local_printer_list
   - debug:
-        msg: "{{ local_printer_list }}"
+        msg: "{{ local_printer_list.stdout_lines }}"
         
