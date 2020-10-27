@@ -1,0 +1,9 @@
+---
+- name: Play to delete a user
+  hosts: all
+  tasks:
+    - name: remove a user 
+      user:
+        name: "{{ user_name }}"
+        shell: /bin/bash
+        state: absent
