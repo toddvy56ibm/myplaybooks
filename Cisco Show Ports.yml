@@ -18,4 +18,4 @@
     - name: Display result to terminal window
       debug:
         var: result.stdout_lines
-      when: ansible_network_os == 'cisco.ios.ios'
+      when: ansible_network_os == 'ios'
