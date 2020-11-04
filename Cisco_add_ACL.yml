@@ -7,7 +7,7 @@
     - cisco.ios
   gather_facts: false
   connection: network_cli
-
+tasks:
 - name: Merge module attributes of given access-groups
   ios_acl_interfaces:
     config:
