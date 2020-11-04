@@ -1,6 +1,6 @@
 ---
 - name: convert configured ACLs to structured data
-  hosts: cisco
+  hosts: all
   gather_facts: false
   tasks:
 
