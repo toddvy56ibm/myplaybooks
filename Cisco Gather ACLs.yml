@@ -6,7 +6,7 @@
 
 
     - name: Use the ACLs resource module to gather the current config
-       cisco.ios.ios_acls:
+       ios_acls:
            state: gathered
            register: acls
 
