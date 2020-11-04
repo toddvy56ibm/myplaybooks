@@ -1,5 +1,5 @@
 ---
-- name: Add VLAN 
+- name: Mod ACL 
   hosts: all
   become: yes
   become_method: enable
@@ -9,7 +9,7 @@
   connection: network_cli
 
 - name: Merge module attributes of given access-groups
-  ios_acl_interfaces:
+  cisco.ios.ios_acl_interfaces:
     config:
     - name: GigabitEthernet0/2
       access_groups:
@@ -17,4 +17,4 @@
         acls:
         - name: 156
           direction: in
-    state: merged
+   state: merged
