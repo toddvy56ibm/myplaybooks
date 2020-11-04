@@ -7,14 +7,14 @@
     - cisco.ios
   gather_facts: false
   connection: network_cli
-tasks:
-- name: Merge module attributes of given access-groups
-  ios_acl_interfaces:
-    config:
-    - name: GigabitEthernet0/2
-      access_groups:
-      - afi: ipv4
-        acls:
-        - name: 156
-          direction: in
-    state: merged
+  tasks:
+  - name: Merge module attributes of given access-groups
+    ios_acl_interfaces:
+      config:
+      - name: GigabitEthernet0/2
+        access_groups:
+        - afi: ipv4
+          acls:
+          - name: 156
+            direction: in
+      state: merged
