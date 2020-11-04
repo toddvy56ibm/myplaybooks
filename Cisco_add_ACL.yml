@@ -9,7 +9,7 @@
   connection: network_cli
 
 - name: Merge module attributes of given access-groups
-  cisco.ios.ios_acl_interfaces:
+  ios_acl_interfaces:
     config:
     - name: GigabitEthernet0/2
       access_groups:
