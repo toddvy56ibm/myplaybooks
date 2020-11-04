@@ -1,0 +1,21 @@
+---
+- name: convert configured ACLs to structured data
+  hosts: cisco
+  gather_facts: false
+  tasks:
+
+
+    - name: Use the ACLs resource module to gather the current config
+       cisco.ios.ios_acls:
+           state: gathered
+           register: acls
+
+    - name: Create inventory directory
+      file:
+       path: "{{ inventory_dir }}/host_vars/{{ inventory_hostname }}"
+       state: directory
+
+    - name: Write the ACL configuration to a file
+      copy:
+        content: "{{ {‘acls’: acls['gathered']} | to_nice_yaml }}"
+        dest: "{{ inventory_dir }}/host_vars/{{ inventory_hostname }}/acls.yaml"
