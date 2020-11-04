@@ -1,7 +1,10 @@
 ---
-
-- name: Add ACL item
+- name: Add VLAN 
   hosts: all
+  become: yes
+  become_method: enable
+  collections:
+    - cisco.ios
   gather_facts: false
   connection: network_cli
 
