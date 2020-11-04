@@ -5,7 +5,7 @@
   gather_facts: false
   connection: network_cli
 
-  - name: Merge module attributes of given access-groups
+- name: Merge module attributes of given access-groups
   ios_acl_interfaces:
     config:
     - name: GigabitEthernet0/2
