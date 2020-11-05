@@ -17,15 +17,15 @@
         aces:
       - sequence: 10
          protocol_options:
-         icmp:
-           traceroute: true
+           icmp:
+             traceroute: true
       - grant: deny
         protocol_options:
-        tcp:
-          ack: true
+          tcp:
+            ack: true
         source:
           host: 198.51.100.0
         destination:
           host: 198.51.110.0
           port_protocol:
-               eq: telnet
+            eq: telnet
