@@ -10,13 +10,22 @@
   connection: network_cli
   
   tasks:   
-    - name: Add ACL configuration to switch 
-       ios_acl_interfaces:
-       config:
-         - name: GigabitEthernet0/2
-           access_groups:
-             - afi: ipv4
-               acls:
-             - name: 156
-               direction: in
-         state: merged
+    - name: Merge provided configuration with device configuration
+      cisco.ios.ios_acls:
+        config:
+       - name: 110
+        aces:
+        - sequence: 10
+          protocol_options:
+            icmp:
+              traceroute: true
+        - grant: deny
+          protocol_options:
+            tcp:
+              ack: true
+          source:
+            host: 198.51.100.0
+          destination:
+            host: 198.51.110.0
+            port_protocol:
+              eq: telnet
