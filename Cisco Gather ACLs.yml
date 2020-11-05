@@ -12,10 +12,10 @@
 
     - name: Create inventory directory
       file:
-       path: "{{ inventory_dir }}/host_vars/{{ inventory_hostname }}"
+       path: "{{ inventory_dir }}/{{ inventory_hostname }}"
        state: directory
 
     - name: Write the ACL configuration to a file
       copy:
         content: "{{ {‘acls’: acls['gathered']} | to_nice_yaml }}"
-        dest: "{{ inventory_dir }}/host_vars/{{ inventory_hostname }}/acls.yaml"
+        dest: "{{ inventory_dir }}/{{ inventory_hostname }}/acls.yaml"
