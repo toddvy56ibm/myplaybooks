@@ -1,6 +1,6 @@
 ---
 
-- name: Add VLAN 
+- name: Merge ACL
   hosts: all
   become: yes
   become_method: enable
@@ -10,13 +10,13 @@
   connection: network_cli
   
   tasks:   
-  - name: Add VLAN configuration to switch 
-    ios_acl_interfaces:
+    - name: Add ACL configuration to switch 
+      ios_acl_interfaces:
       config:
-   - name: GigabitEthernet0/2
-     access_groups:
-     - afi: ipv4
-       acls:
-       - name: 156
-         direction: in
-   state: merged
+       - name: GigabitEthernet0/2
+         access_groups:
+          - afi: ipv4
+            acls:
+          - name: 156
+            direction: in
+      state: merged
