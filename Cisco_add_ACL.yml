@@ -11,7 +11,7 @@
   
   tasks:   
   - name: Merge provided configuration with device configuration
-    ios_acls:
+    aces:
       config:
       - name: 110
         aces:
