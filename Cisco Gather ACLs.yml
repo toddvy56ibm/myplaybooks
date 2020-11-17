@@ -9,7 +9,10 @@
        ios_acls:
            state: gathered
            register: acls
-
+    - debug:
+        var: acls
+        verbosity: 2
+    
     - name: Create inventory directory
       file:
        path: "{{ inventory_dir }}/{{ inventory_hostname }}"
