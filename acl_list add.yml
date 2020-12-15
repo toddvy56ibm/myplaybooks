@@ -13,7 +13,7 @@
     ios_config:
       lines:
       - 10 permit ip host 192.0.2.1 any log
-      parents: ip access-list extended test
-      before: no ip access-list extended test
+      parents: ip access-list 1
+      before: no ip access-list 1
       match: exact
     
