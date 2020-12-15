@@ -9,7 +9,7 @@
   gather_facts: false
   connection: network_cli
 - name: load new acl into device
-  cisco.ios.ios_config:
+  ios_config:
     lines:
     - 10 permit ip host 192.0.2.1 any log
     parents: ip access-list extended test
