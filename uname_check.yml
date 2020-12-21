@@ -2,4 +2,9 @@
 - name: Am I Alive? Uname Chk Example Playbook
   hosts: all
   tasks:
-  
+    # Execute Host based task using variable
+    - name: Execute the command Uname -a
+      become: yes
+      become_user: root 
+      shell: uname -a
+      
