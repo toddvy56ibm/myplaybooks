@@ -1,0 +1,31 @@
+- name: Applying users security baselines on Linux
+  hosts: all
+  gather_facts: yes
+  tasks:
+​
+  - name: Collect accounts with empty password fields
+    shell: "cat /etc/shadow | awk -F: '($2 == \"\" ) {j++;print $1; } END {exit j}'"
+    register: empty_password_accounts
+    changed_when: no
+    check_mode: no
+​
+  - name: Collect UID 0 accounts other than root
+    shell: "cat /etc/passwd | awk -F: '($3 == 0 && $1 != \"root\") {i++;print $1 } END {exit i}'"
+    register: uid_zero_accounts_except_root
+    changed_when: no
+    check_mode: no
+​
+  - name: Accounts - Ensure root is the only UID 0 account
+    shell: "passwd -l {{ item }}"
+    changed_when: no
+    failed_when: no
+    with_items:
+      - "{{ uid_zero_accounts_except_root.stdout_lines }}"
+​
+  - name: Accounts - Ensure password fields are not empty
+    shell: "passwd -l {{ item }}"
+    changed_when: no
+    failed_when: no
+    when: empty_password_accounts.rc
+    with_items:
+      - "{{ empty_password_accounts.stdout_lines }}"
