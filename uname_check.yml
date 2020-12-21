@@ -1,0 +1,5 @@
+---
+- name: Am I Alive? Uname Chk Example Playbook
+  hosts: all
+  tasks:
+  
