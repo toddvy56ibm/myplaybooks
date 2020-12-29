@@ -11,4 +11,6 @@
   - name: Create an access-list
     ios_config:
       lines: access-list 10 permit 10.1.10.207
+  - name: Reseq access list
+    ios_config:
       lines: ip access-list resequence 10 10 10
