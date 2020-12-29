@@ -14,3 +14,6 @@
   - name: Reseq access list
     ios_config:
       lines: ip access-list resequence 10 10 10
+  - name: Save Config
+    ios_config:
+      save_when: modified
