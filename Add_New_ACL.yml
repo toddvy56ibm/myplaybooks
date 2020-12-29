@@ -10,4 +10,4 @@
   tasks:
   - name: Create an access-list
     ios_config:
-      lines: access-list 20 permit 10.1.10.207   
+      lines: access-list 10 permit 10.1.10.207   
