@@ -15,11 +15,11 @@
       state: latest
   - name: Removing {{ scap_dir }}
     file:
-      path: {{ scap_dir }}
+      path: "{{ scap_dir }}"
       state: absent
   - name: Creating {{ scap_dir }}
     file:
-      path: {{ scap_dir }}
+      path: "{{ scap_dir }}"
       state: directory
       owner: root
       group: root
