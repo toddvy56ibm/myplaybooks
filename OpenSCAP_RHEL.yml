@@ -23,12 +23,12 @@
       state: directory
       owner: root
       group: root
-      mode: 0700
+      mode: 0777
   - name: Download Red Hat Security Advisory Datastream file 
     get_url:
       url:  https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
       dest: "{{ scap_dir}}/com.redhat.rhsa-RHEL7.ds.xml"
-      mode: 0600
+      mode: 0777
     when:
       - ansible_facts['distribution'] == "RedHat"
       - ansible_facts['distribution_major_version'] == "7"
