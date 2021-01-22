@@ -4,8 +4,8 @@
   vars:
     rhel8: RHEL8
     rhel7: RHEL7
-#    scap_url: https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
-     scap_dir: /opt/security-scan
+#   scap_url: https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
+    scap_dir: /opt/security-scan
   become: yes
   gather_facts: yes
   tasks:
