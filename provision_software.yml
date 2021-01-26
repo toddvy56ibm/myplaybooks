@@ -1,0 +1,47 @@
+---
+- name: install mysql on db servers
+  hosts: db
+  tasks:
+    - name: install mysql
+      yum:
+        name: "mysql-server"
+        state: present
+    - name: enable mysql
+      service:
+        name: mysqld
+        state: restarted
+        enabled: yes
+        
+- name: install http and ftp
+  hosts: web
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: install ftpd
+      yum:
+        name: vsftpd
+        state: latest
+    - name: enable httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+    - name: enabled ftpd service
+      service:
+        name: vsftpd
+        state: started
+        enabled: true
+    - name: add httpd to firewalld
+      firewalld:
+        service: http
+        state: enabled
+        permanent: true
+        immediate: true
+    - name: add ftp to firewalld
+      firewalld:
+        service: ftp
+        state: enabled
+        permanent: true     
+        immediate: true
