@@ -37,6 +37,11 @@
         name: vsftpd
         state: started
         enabled: true
+    - name: enable Firewalld service
+      service:
+        name: firewalld
+        state: started
+        enabled: true
     - name: add httpd to firewalld
       firewalld:
         service: http
