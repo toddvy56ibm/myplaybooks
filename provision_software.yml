@@ -2,6 +2,10 @@
 - name: install mysql on db servers
   hosts: db
   tasks:
+    - name: download epel-release
+      yum:
+        name: https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+        state: present 
     - name: install mysql
       yum:
         name: "mysql-server"
