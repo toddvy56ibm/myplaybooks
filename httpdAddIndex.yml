@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: latest Apache version installed
+    yum:
+      name: httpd
+      state: latest
+  - name: copy index.html
+    template:
+      src: index.html
+      dest: /var/www/html
+  - name: Line in file from facts
+    lineinfile:
+      line: "{{ toddtestkohls }} "
+      path: /var/www/html/index.html
+  - name: start Apache server
+    service:
+      name: httpd
+      state: started
