@@ -5,6 +5,6 @@
   gather_facts: false
   tasks:
   - name: Restart httpd server
-    yum:
+    ansible.builtin.systemd:
       name: httpd
       state: restart
