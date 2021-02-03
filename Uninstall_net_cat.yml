@@ -1,0 +1,10 @@
+--- #Sample Ansible Play for RH Synergy Demo
+
+- name: Un-Install Netcat Software on Linux Server
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Un-Install Netcat RHEL Package
+      yum:
+        name: nmap-ncat
+        state: absent
