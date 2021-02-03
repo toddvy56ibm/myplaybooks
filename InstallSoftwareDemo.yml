@@ -1,0 +1,9 @@
+--- #Sample Ansible Play for RH Synergy Demo
+
+- name: Install Software Netcat on Linux Server
+  hosts: all
+  tasks:
+    - name: Install Netcat
+      yum:
+        name: nmap-ncat
+        state: latest
