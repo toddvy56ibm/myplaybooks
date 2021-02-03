@@ -1,4 +1,4 @@
---- #Sample Ansible Play for RH Synergy Demo
+--- #  Sample Ansible Play for RH Synergy Demo
 
 - name: Install Netcat Software on Linux Server
   hosts: all
