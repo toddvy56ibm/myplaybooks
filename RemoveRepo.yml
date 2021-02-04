@@ -5,6 +5,6 @@
   tasks:
     - name: Remove repository (and clean up left-over metadata)
       yum_repository:
-        name: Red Hat Enterprise Linux 7 Server - Extras (RPMs)
+        name: epel-release-latest-7.noarch.rpm
         state: absent
      # notify: yum-clean-metadata
