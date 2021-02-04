@@ -5,6 +5,6 @@
   tasks:
     - name: Remove repository (and clean up left-over metadata)
       yum_repository:
-        name: epel
+        name: epel-release
         state: absent
      # notify: yum-clean-metadata
