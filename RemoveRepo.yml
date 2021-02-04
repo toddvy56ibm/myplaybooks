@@ -7,4 +7,4 @@
       yum_repository:
         name: epel
         state: absent
-      notify: yum-clean-metadata
+     # notify: yum-clean-metadata
