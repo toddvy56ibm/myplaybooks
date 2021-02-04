@@ -5,6 +5,6 @@
   tasks:
     - name: Remove repository (and clean up left-over metadata)
       yum_repository:
-        name: rhel-7-server-extras-rpms/x86_64
+        name: Red Hat Enterprise Linux 7 Server - Extras (RPMs)
         state: absent
      # notify: yum-clean-metadata
