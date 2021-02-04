@@ -1,0 +1,6 @@
+---
+- name: Remove repository (and clean up left-over metadata)
+  yum_repository:
+    name: epel
+    state: absent
+  notify: yum-clean-metadata
