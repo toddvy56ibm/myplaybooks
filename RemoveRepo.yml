@@ -6,6 +6,6 @@
     - name: Remove repository (and clean up left-over metadata)
       yum_repository:
         name: epel
-        file: external_repos
+   #     file: external_repos
         state: absent
      # notify: yum-clean-metadata
