@@ -23,11 +23,11 @@
       yum:
         name: httpd
         state: latest
-    - name: copy index.html
+    - name: Install Website Code
       template:
         src: index.html
         dest: /var/www/html
-    - name: copy index.html
+    - name: copy index2.html
       template:
         src: index2.html
         dest: /var/www/html    
