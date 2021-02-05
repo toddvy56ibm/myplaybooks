@@ -25,7 +25,7 @@
         state: latest
     - name: copy index.html
       template:
-        src: index2.html
+        src: index.html
         dest: /var/www/html
     - name: install ftpd
       yum:
