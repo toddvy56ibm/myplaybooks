@@ -23,6 +23,10 @@
       yum:
         name: httpd
         state: latest
+    - name: copy index.html
+      template:
+        src: index.html
+        dest: /var/www/html
     - name: install ftpd
       yum:
         name: vsftpd
