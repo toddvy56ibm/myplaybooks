@@ -5,7 +5,7 @@
     rhel8: RHEL8
     rhel7: RHEL7
 #   scap_url: https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
-    scap_dir: /opt/security-scan
+    scap_dir: /var/www/html/security-scan
   become: yes
   gather_facts: yes
   tasks:
@@ -33,12 +33,12 @@
       - ansible_facts['distribution'] == "RedHat"
       - ansible_facts['distribution_major_version'] == "7"
   - name: Running Red Hat Security Advisory scan
-    command: "oscap xccdf eval --results /opt/security-scan/results.xml --report /opt/security-scan/report.html /opt/security-scan/com.redhat.rhsa-RHEL7.ds.xml"
+    command: "oscap xccdf eval --results /var/www/html/security-scan/results.xml --report /var/www/html/security-scan/index.html /var/www/html/security-scan/com.redhat.rhsa-RHEL7.ds.xml"
     ignore_errors: yes
     register: oscap_result
   - name: Saving results
     fetch:
-      src: "{{ scap_dir }}/report.html"
+      src: "{{ scap_dir }}/index.html"
       dest: '/root/ansible-openscap/scan-reports/{{ inventory_hostname }}-report.html'
       flat: yes
   - debug:
