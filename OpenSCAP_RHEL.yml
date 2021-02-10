@@ -36,11 +36,11 @@
     command: "oscap xccdf eval --results /var/www/html/security-scan/results.xml --report /var/www/html/security-scan/index.html /var/www/html/security-scan/com.redhat.rhsa-RHEL7.ds.xml"
     ignore_errors: yes
     register: oscap_result
-  - name: Saving results
-    fetch:
-      src: "{{ scap_dir }}/index.html"
-      dest: '/root/ansible-openscap/scan-reports/{{ inventory_hostname }}-report.html'
-      flat: yes
-  - debug:
-      var: oscap_result.stdout_lines
+#  - name: Saving results
+#    fetch:
+#     src: "{{ scap_dir }}/index.html"
+#      dest: '/root/ansible-openscap/scan-reports/{{ inventory_hostname }}-report.html'
+#      flat: yes
+#  - debug:
+#      var: oscap_result.stdout_lines
       
