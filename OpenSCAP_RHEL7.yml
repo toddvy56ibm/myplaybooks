@@ -1,5 +1,5 @@
 ---
-- name: OpenSCAP - RHEL 7/8 vulnerability scanner
+- name: OpenSCAP - RHEL 7 vulnerability scanner
   hosts: all
   vars:
     rhel8: RHEL8
