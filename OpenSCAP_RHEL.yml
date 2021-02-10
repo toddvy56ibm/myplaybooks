@@ -27,7 +27,7 @@
   - name: Download Red Hat Security Advisory Datastream file 
     get_url:
       url:  https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
-      dest: "{{ scap_dir}}/com.redhat.rhsa-RHEL7.ds.xml"
+      dest: "{{ scap_dir }}/com.redhat.rhsa-RHEL7.ds.xml"
       mode: 0777
     when:
       - ansible_facts['distribution'] == "RedHat"
