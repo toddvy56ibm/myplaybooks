@@ -26,7 +26,7 @@
       group: root
       mode: 0700
   - name: Running Red Hat Compliance Scan
-    command: "oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --report /var/www/html/security-scan/security-scan/report.html /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
+    command: "oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --report /var/www/html/index.html /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
     ignore_errors: yes
     register: oscap_result
   - debug:
