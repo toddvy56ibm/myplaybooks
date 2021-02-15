@@ -1,0 +1,46 @@
+---
+- name: OpenSCAP - RHEL 8 vulnerability scanner
+  hosts: all
+  vars:
+    rhel8: RHEL8
+    rhel7: RHEL7
+#   scap_url: https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
+    scap_dir: /var/www/html/security-scan
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: yum install openscap-scanner
+    yum:
+      name: openscap-scanner
+      state: latest
+  - name: Removing {{ scap_dir }}
+    file:
+      path: "{{ scap_dir }}"
+      state: absent
+  - name: Creating {{ scap_dir }}
+    file:
+      path: "{{ scap_dir }}"
+      state: directory
+      owner: root
+      group: root
+      mode: 0777
+  - name: Download Red Hat Security Advisory Datastream file 
+    get_url:
+      url:  https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL8.ds.xml
+      dest: "{{ scap_dir }}/com.redhat.rhsa-RHEL8.ds.xml"
+      mode: 0777
+    when:
+      - ansible_facts['distribution'] == "RedHat"
+      - ansible_facts['distribution_major_version'] == "8"
+  - name: Running Red Hat Security Advisory scan
+    command: "oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --report report.html /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
+    ignore_errors: yes
+#    register: oscap_result
+#  - name: Saving results
+#    fetch:
+#     src: "{{ scap_dir }}/index.html"
+#      dest: '/root/ansible-openscap/scan-reports/{{ inventory_hostname }}-report.html'
+#      flat: yes
+#  - debug:
+#      var: oscap_result.stdout_lines
+      
