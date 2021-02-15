@@ -1,6 +1,6 @@
 ---
 - name: Red Hat Enterprise Linux Compliance Scan
-  hosts: rhel
+  hosts: all
   vars:
     scap_dir: /var/www/html/security-scan
   become: yes
