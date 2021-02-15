@@ -24,7 +24,7 @@
       state: directory
       owner: root
       group: root
-      mode: 0700
+      mode: 0755
   - name: Running Red Hat Compliance Scan
     command: "oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --report /var/www/html/security-scan/report.html /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
     ignore_errors: yes
