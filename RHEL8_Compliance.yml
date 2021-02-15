@@ -2,8 +2,7 @@
 - name: Red Hat Enterprise Linux Compliance Scan
   hosts: rhel
   vars:
-    scap_url: https://www.redhat.com/security/data/metrics/ds/com.redhat.rhsa-RHEL7.ds.xml
-    scap_dir: /opt/security-scan
+    scap_dir: /var/www/html/security-scan
   become: yes
   gather_facts: yes
   tasks:
@@ -27,7 +26,7 @@
       group: root
       mode: 0700
   - name: Running Red Hat Compliance Scan
-    command: "oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --report /opt/security-scan/report.html /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
+    command: "oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --report /var/www/html/security-scan/security-scan/report.html /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
     ignore_errors: yes
     register: oscap_result
   - debug:
