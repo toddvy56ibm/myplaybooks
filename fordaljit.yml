@@ -18,9 +18,9 @@
         priority: 2
         caller_id: Abraham Lincoln
     register: new_incident
-    environment:
-        http_proxy: http://proxy.example.com:8080
-        https_proxy: https://proxy.example.com:443
+ #   environment:
+  #      http_proxy: http://proxy.example.com:8080
+   #     https_proxy: https://proxy.example.com:443
 
   - debug:
       var: new_incident.record.task_effective_number
