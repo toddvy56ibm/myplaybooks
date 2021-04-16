@@ -1,0 +1,23 @@
+---
+- name: Using ServiceNow Collection
+  hosts: localhost
+  gather_facts: no
+  collections:
+    - servicenow.servicenow
+
+  tasks:
+  - name: Create an incident
+    snow_record:
+      username: admin
+      password: "{{ passwd }}"
+      instance: dev78621
+      state: present
+      data:
+        short_description: "{{ short_des }}"
+        severity: 3
+        priority: 2
+        caller_id: Abraham Lincoln
+    register: new_incident
+
+  - debug:
+      var: new_incident.record.task_effective_number
