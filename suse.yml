@@ -6,6 +6,7 @@
             zypper:
                     name: '*'
                     state: latest
+                    type: patch
 
           - name: Check if a reboot is needed on all SUSE/OpenSUSE based servers
             register: linux_reboot_required_file
