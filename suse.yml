@@ -1,6 +1,6 @@
 ---
-- become: true
-  become_user: root
+- name: Update All Flavors of SUSE Linux - patch only
+  hosts: all
   tasks:
           - name: Update all packages on OpenSUSE/SUSE Linux
             zypper:
