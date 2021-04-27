@@ -1,6 +1,6 @@
 ---
-- include_tasks: freebsd.yml
-  when: ansible_os_family == "FreeBSD"
+- include_tasks: suse.yml
+  when: ansible_os_family == "Suse"
   tags:
     - unbound
 
