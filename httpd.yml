@@ -1,6 +1,5 @@
 ---
 - name: Apache server installed
-  hosts: 10.1.10.84
   become: yes
   gather_facts: false
   tasks:
