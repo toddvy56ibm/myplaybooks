@@ -1,12 +1,9 @@
+--- #  Sample Ansible Play for Javier
+
 - name: Server Log Files Cleanup
-
   hosts: all
-
   gather_facts: no
-
   become: yes
-
-  
 
   tasks:
 
@@ -18,13 +15,13 @@
 
        age: 90d
 
-       patterns: 'bldeploy*,bltarget*'
+       patterns: 'todd*,amir*'
 
      with_items:
 
-       - /opt/bmc/bladelogic/RSCD/Transactions/log/
+       - /home
 
-       - /opt/bmc/bladelogic/NSH/Transactions/log/
+       - /home/todd
 
      register: oldlogfiles
 
