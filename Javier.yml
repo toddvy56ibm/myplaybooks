@@ -15,13 +15,13 @@
 
        age: 90d
 
-       patterns: 'todd*,amir*'
+       patterns: 'todd*,amir*,junk*'
 
      with_items:
 
        - /home/
-
        - /home/todd/
+       -/home/amir/
 
      register: oldlogfiles
 
