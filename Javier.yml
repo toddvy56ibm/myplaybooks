@@ -29,7 +29,7 @@
 
    - set_fact: 
 
-       newlistoffiles={{ oldlogfiles.results | map(attribute="files") | list }}
+       newlistoffiles={{ oldlogfiles.results | map(attribute="path") | list }}
 
   
 
