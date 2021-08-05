@@ -1,0 +1,53 @@
+- name: Server Log Files Cleanup
+
+  hosts: all
+
+  gather_facts: no
+
+  become: yes
+
+  
+
+  tasks:
+
+   - name: Look for Files
+
+     find:
+
+       paths: "{{ item }}"
+
+       age: 90d
+
+       patterns: 'bldeploy*,bltarget*'
+
+     with_items:
+
+       - /opt/bmc/bladelogic/RSCD/Transactions/log/
+
+       - /opt/bmc/bladelogic/NSH/Transactions/log/
+
+     register: oldlogfiles
+
+ 
+
+   - set_fact: 
+
+       newlistoffiles={{ oldlogfiles.results | map(attribute="files") | list }}
+
+  
+
+   - debug:
+
+       msg: "{{ newlistoffiles }}"
+
+ 
+
+#   - name: Delete files 
+
+#     file:
+
+#       path: "{{ item }}"
+
+#       state: absent
+
+#     with_items: '{{ path }}' 
