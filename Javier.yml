@@ -21,7 +21,7 @@
 
        - /home/
        - /home/todd/
-       -/home/amir/
+       - /home/amir/
 
      register: oldlogfiles
 
