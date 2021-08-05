@@ -19,9 +19,9 @@
 
      with_items:
 
-       - /home
+       - /home/
 
-       - /home/todd
+       - /home/todd/
 
      register: oldlogfiles
 
