@@ -37,7 +37,7 @@
 
    - debug:
 
-       msg: "{{ newlistoffiles.path }}"
+   #    msg: "{{ newlistoffiles.path }}"
 
  
 
