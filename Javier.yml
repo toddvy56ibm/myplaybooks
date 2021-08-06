@@ -24,12 +24,14 @@
        - /home/amir/
 
      register: oldlogfiles
-
+    
  
-
+   - debug:
+       msg: " {{ oldlogfiles.results }}"
+       
    - set_fact: 
 
-       newlistoffiles={{ oldlogfiles.results | map(attribute="path") | list }}
+   #    newlistoffiles={{ oldlogfiles.results | map(attribute="path") | list }}
 
   
 
