@@ -5,11 +5,11 @@
   become: yes
 
   tasks:
-- debug: msg="the value of todd.log is {{lookup('file', '/home/todd.log') }}"
+  - debug: msg="the value of todd.log is {{lookup('file', '/home/todd.log') }}"
 
-- name: display multiple file contents
-  debug: var=item
-  with_file:
-    - "/home/todd.log"
-    - "/home/amir.log"  # will be looked in files/ dir relative to play or in role
+  - name: display multiple file contents
+    debug: var=item
+    with_file:
+      - "/home/todd.log"
+      - "/home/amir.log"  # will be looked in files/ dir relative to play or in role
 #    - "/path/to/biz.txt"
