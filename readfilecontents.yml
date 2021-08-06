@@ -1,4 +1,10 @@
 ---
+- name: Read File Contents
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
 - debug: msg="the value of todd.log is {{lookup('file', '/home/todd.log') }}"
 
 - name: display multiple file contents
