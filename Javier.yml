@@ -13,7 +13,7 @@
 
        paths: "{{ item }}"
 
-       age: 90d
+  #     age: 90d
 
        patterns: 'todd*,amir*,junk*'
 
