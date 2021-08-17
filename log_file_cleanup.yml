@@ -1,0 +1,32 @@
+---
+
+- name: Server Log Files Cleanup multiple search patterns
+  hosts: "{{ host_group }}"
+  gather_facts: no
+  become: yes
+  vars:
+    log_path: "/your/path/here"
+    search_patterns:
+      - your*
+      - search*
+      - patterns*
+  
+
+  tasks:
+   - name: List Search Directories
+     shell: "ls -d {{ log_path }}"
+     register: file_paths
+     failed_when: file_paths.rc > 10000
+
+   - name: List Matching Files
+     find:
+       paths: "{{ file_paths.stdout_lines }}"
+       age: 90d
+       patterns: "{{ search_patterns }}"
+     register: oldlogfiles 
+
+   - name: Delete Files 
+     file:
+       path: "{{ item.path }}"
+       state: absent
+     with_items: '{{ oldlogfiles.files }}'        
