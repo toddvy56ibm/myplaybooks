@@ -19,10 +19,10 @@
 - name: install http and ftp
   hosts: web
   tasks:
-#    - name: install httpd
- #     yum:
- #       name: httpd
-  #      state: latest
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
     - name: Install Website Code
       template:
         src: index.html
